@@ -35,7 +35,7 @@
   
 }
 .body .p1{
-  font-size: 3em;
+  font-size:clamp(1.8em, 4cqi, 3em);
   font-weight: 500;
   padding: 0px 5vw;
 }

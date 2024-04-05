@@ -15,7 +15,8 @@ html{
     height: 100vh;
     color: white;
     width: 100%;
-    
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
     background-color: rgba(0, 0, 0, 0.65);
     
 }
@@ -28,9 +29,12 @@ html{
     flex-direction: column;
     flex-wrap: wrap;
     width: 100vw;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+
 }
 .body .p11{
-    font-size: 3em;
+    font-size:clamp(1.8em, 4cqi, 3em);
     font-weight: 500;
     padding: 0px 5vw;
 }
@@ -60,6 +64,8 @@ video{
     right:0;
     bottom:0;
     z-index: -1;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 
@@ -75,8 +81,6 @@ video{
     color: white;
     font-weight: 500;
     transition: .2s linear;
-    /* background-color: red; */
-
 }
 
 .links a:hover{
@@ -87,7 +91,6 @@ video{
     border-bottom: 2px solid orange;
     border-bottom-left-radius: 20%;
     padding-bottom: 5px;
-    /* transform: ; */
 }
 .links{
     display:flex;
@@ -205,16 +208,13 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* height: 50vh; */
     text-align: center;
-    padding: 30px 0px;
-    color: grey;
-    /* min-width: 200px; */
+    padding: 30px 30px;
     
 
 }
 .welcome .p{
-    font-size: 3em;
+    font-size:clamp(1.8em, 4cqi, 3em);
     margin-bottom: 70px;
     /* border-bottom: 1px solid orange; */
 }
@@ -226,7 +226,8 @@ input{
     justify-content: center;
     text-align: center;
     box-shadow: 1px 1px 10px grey;
-    font-size: 1.25em;
+    /* font-size: 1.25em; */
+    font-size:clamp(1em, 4cqi, 1.25em);
     line-height: 1.8em;
     /* outline: 1px solid orange; */
     outline-offset: -20px;
@@ -269,6 +270,7 @@ input{
     width: 100vw;
     position:relative;
     margin-top: 50px;
+    
 }
 .quote img{
     object-fit: cover;
@@ -283,11 +285,13 @@ input{
 }
 .services{
     margin: 5vh 0px;
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size:clamp(2em, 4cqi, 3em);
 }
 
 .script{
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
+    font-size:clamp(1.15em, 4cqi, 1.5em);
     text-align: center;
     background-color: rgba(0, 0, 0, 0.65);
     height: 100%;
@@ -309,19 +313,21 @@ input{
     flex-wrap:wrap;
 }
 .grid div{
-    height: 90vh;
+    /* height: 90vh; */
     width: 40vw;
     overflow: hidden;
 }
 .grid1{
     position:relative;
+    height: 90vh;
 }
 .im-p{
     height: 100%;
     display:flex;
     justify-content: center;
     color:white;
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size:clamp(2.5em, 4cqi, 3em);
     padding-top: 70vh;
     outline:2px solid white;
     background-color: rgb(0, 0, 0, .35);
@@ -337,7 +343,6 @@ input{
     
 }
 .grid img{
-    /* width: 500px; */
     object-fit: cover;
     object-position: center;
     width: 100%;
@@ -348,27 +353,25 @@ input{
     right:0;
 }
 .join{
-    /* background-color: red; */
-    height: 100%;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
 
 .p1{
-    font-size: 3em;
+    /* font-size: 3em; */
+    font-size:clamp(1.9em, 4cqi, 3em);
     color: grey;
 }
 .p2{
-    /* color: grey; */
-    font-size: 1.2em;
-    text-align: left;
+    
+    font-size:clamp(1em, 4cqi, 1.2em);
+    text-align: center;
     padding: 30px 0px;
-    font-family: cursive;
 }
 .loc{
     
-    font-size: 2em;
+    font-size: 1.9em;
     color: white;;
     animation: animate 2s infinite;
     /* background: red; */
@@ -376,7 +379,7 @@ input{
 }
 .p3{
     display: flex;
-    gap: 1em;
+    gap: 1em; 
     background-color: black;
     justify-content: center;
     align-items: center;
@@ -469,5 +472,6 @@ input{
     .grid div{
         /* flex-wrap: wrap; */
         width: 100%;
+        /* height:50vh; */
     }
 }

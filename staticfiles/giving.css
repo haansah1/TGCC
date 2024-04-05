@@ -46,7 +46,7 @@ width: 100vw;
 
 }
 .body .p1{
-font-size: 3em;
+    font-size:clamp(1.8em, 4cqi, 3em);
 font-weight: 500;
 padding: 0px 5vw;
 }
@@ -201,14 +201,16 @@ width: 65vw;
     margin: 10px;
     text-align: center;
 }
-.p1{
-    font-size: 1.3em;
-    padding: 10px 0px 20px 0px;
+.section .p1{
+    font-size:clamp(1em, 4cqi, 1.3em);
+    color:rgb(128, 128, 128, 0.7);
+    font-weight:500;
+    padding: 40px 20px;
 }
 .give-cont{
     background: black;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -223,9 +225,10 @@ width: 65vw;
 .give-cont p{
     position:absolute;
     top:0;
+    /* margin-bottom: 30px; */
     padding-top:5vh;
     text-transform: capitalize;
-    font-size: 2em;
+    font-size:clamp(1.3em, 4cqi, 2em);
 
 
 }
@@ -237,7 +240,7 @@ form #inp::placeholder{
 form #inp{
     background: black;
     color: white;
-    font-size:3em;
+    font-size:clamp(1.8em, 4cqi, 3em);
     border:none;
     height: 80px;
     width:100%;
@@ -251,7 +254,7 @@ form #inp{
 form #inp1{
     background: black;
     color: white;
-    font-size:1.5em;
+    font-size:clamp(1em, 4cqi, 1.5em);
     border:none;
     height: 80px;
     width:100%;
@@ -262,7 +265,9 @@ form #inp1{
     text-align: center;
     
 }
-
+form{
+    margin-top: 15vh;
+}
 
 form label{
     color: white;
@@ -271,6 +276,7 @@ form label{
     width: 100%;
     display:flex;
     text-transform: uppercase;
+    margin-bottom: 15px;
 }
 .num{
     border-bottom: 1px solid grey;

@@ -8,6 +8,34 @@ class ImageGroup(models.Model):
     def __str__(self):
         return self.name
 
+class Testimonials(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    testimony = models.CharField(max_length=5000, null=True)
+    image = models.ImageField(null = True, blank = True);
+    description = models.CharField(max_length=100, null= True);
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = " " 
+        return url
+
+class Teams(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    image = models.ImageField(null = True, blank = True);
+    description = models.CharField(max_length=100, null= True);
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = " " 
+        return url
+
+
 class Gallery(models.Model):
     name = models.ForeignKey(ImageGroup, on_delete=models.SET_NULL, null=True, blank=True)
     # name = models.CharField(max_length=100)

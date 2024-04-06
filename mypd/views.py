@@ -14,13 +14,17 @@ def index(request):
     return render(request, "index.html")
 
 def about(request):
-    return render(request, "about.html")
+    teams = Teams.objects.all()
+    context = {"teams": teams}
+    return render(request, "about.html", context)
     
 def sermons(request):
     return render(request, "sermons.html")
 
 def testimonies(request):
-    return render(request, "testimonies.html")
+    testimonies = Testimonials.objects.all()
+    context = {"testimonies": testimonies}
+    return render(request, "testimonies.html", context)
 
 def giving(request):
     return render(request, "giving.html")

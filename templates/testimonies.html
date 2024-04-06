@@ -21,6 +21,9 @@
   <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
   <link href="{% static 'glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  
 
   <!-- Template Main CSS File -->
   <link href="{% static 'testimonies.css' %}" rel="stylesheet">
@@ -67,10 +70,46 @@
         </div>
     </div>
     <main id="main">
-        <section>
+    <section id="testimonials" class="testimonials section-bg">
+        <div class="container">
+    
+            <div class="section-title">
+                <h2>Testimonials</h2>
+                <p>2 Timothy 1:8 "Therefore do not be ashamed of the testimony about our Lord, nor of me his prisoner, but share in suffering for the gospel by the power of God"</p>
+            </div>
+    
+            {% for testimony in testimonies%}
+            
+            {% endfor %}
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                {% for testimony in testimonies%}
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                    <p>
+                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                        {{testimony.testimony}}
+                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src={{testimony.imageURL}} class="testimonial-img" alt="">
+                    <h3>{{testimony.name}}</h3>
+                    <h4>{{testimony.description}}</h4>
+                    </div>
+                </div><!-- End testimonial item -->
+                {% endfor %}
+                
+    
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+        </div>
+        </section><!-- End Testimonials Section -->
+        <section class="section">
             <div class="testimony-img">
                 <div class="grid1">
-                    <img src="{% static 'img/images/im12.jpg' %}" alt="">
+                    <img class="img" src="{% static 'img/images/im12.jpg' %}" alt="">
                     <p class="im-p">Testimony Time!!</p>
                 </div>
             </div>
@@ -108,6 +147,7 @@
     <script src="{% static 'glightbox/js/glightbox.min.js' %}"></script>
     <script src="{% static 'isotope-layout/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'swiper/swiper-bundle.min.js' %}"></script>
+    
 
     <!-- Template Main JS File -->
     <script src="{% static 'main.js' %}"></script>

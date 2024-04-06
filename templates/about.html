@@ -22,6 +22,8 @@
   <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
   <link href="{% static 'glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'boxicons/css/boxicons.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{% static 'about.css' %}" rel="stylesheet">
@@ -69,19 +71,90 @@
     </div>
     <div class="main-cont2">
         <div class="founder">
-            <div class="founder-img">
-                <img src="{% static 'img/images/im6.jpg' %}" alt="">
-                <div class="founder-p">
-                    <p>founder</p>
-                    <p>
-                        Daniel Kwame Osae Djan is the founder and General Overseer of the Pleroma International Ministries (PLIM). A product of the Kwame Nkrumah University of Science and Technology, Kumasi (KNUST). He has been teaching and ministering to nations and places for the past three years. He lives in the city of London in The United Kingdom. Held the office of the Prayer Secretary as well as Outreach President in The Inter-Hall Christian Fellowship-IHCF whiles on campus. He is an author and writer, counselor, a prophet and a teacher of the word moving strongly in the prophetic giftings.</p>
+            <div class="grid1">
+                <img src="{% static 'img/images/im1.PNG' %}" alt="">
+                <p class="im-p">Founder</p>
+            </div>
+            <div class="founder-p">
+                <p>Daniel Kwame Osae Djan</p>
+                <p>
+                    Daniel Kwame Osae Djan is the founder and General Overseer of the Pleroma International Ministries (PLIM). A product of the Kwame Nkrumah University of Science and Technology, Kumasi (KNUST). He has been teaching and ministering to nations and places for the past three years. He lives in the city of London in The United Kingdom. Held the office of the Prayer Secretary as well as Outreach President in The Inter-Hall Christian Fellowship-IHCF whiles on campus. He is an author and writer, counselor, a prophet and a teacher of the word moving strongly in the prophetic giftings.</p>
+            </div>
+        </div>
+        <div class="img-bg bg1">
+            <p>Our Mission</p>
+        </div>
+        <div class="info">
+            <p>
+                Our mission is to create an atmosphere and environment where people can access the unique and awesome presence of GOD. Advancing the prophetic voice of ELOHIM in these times and impacting people to be impact makers wherever they find themselves. Finally, to make people understand the essence of the prophetic ministry and having the knowledge of the original intent of God concerning their lives.
+            </p>
+        </div>
+        <div class="img-bg bg2">
+            <p>Vision Statement – PLIM​</p>
+        </div>
+        <div class="info">
+            <p>
+                We are a ministry (Interdenominational) founded basically on Biblical principles. We serve in the Spirit of excellence with integrity and compassion for our community, our nation, our local churches where we fellowship and the world at large.<br>
+                We are establishing a reputation for reaching the lost, down hearted, the broken; to minister and serve them with utmost level of dignity and respect. <br>
+                We are recognized for our dedication to academic and spiritual excellence as well as mentoring and raising spiritual leaders to be impact makers. We believe in the gifts God has placed in young and upcoming generation and always seek for avenues to expose these giftings to the world.<br>
+                Pleroma International Ministries’ atmosphere and environment inspires maximum participation, promotes personal satisfaction, supports and moulds effective leadership.<br>
+                Love and care for our members, partners and associates so as to present highly sensitive and dedicated believers who will work effectively to ensure the progress of the Kingdom of God.
+            </p>
+        </div>
+        <div class="img-bg bg3">
+            <p>Aims and Objectives(Focus)</p>
+        </div>
+        <div class="info">
+            <p>
+                The objectives (FOCUS) of the ministry shall be to advance the gospel of our LORD and savior Jesus Christ primarily and also seek to unite believers, irrespective of race, nationality or denomination, into a strong Ministry for the purpose of empowering and enhancing the giftings and callings of believers by bringing out their strengths and the greatness in them through the Word of God. The focus can be sub-divided into the following: <br><br>
+
+                <em class="orange"><i class="fas fa-feather-pointed"></i></em>BULDING PEOPLE WITH THE WORD OF GOD: Developing the attitudes and desires of members towards a good Bible study life. Getting personal with the word of God. <br><br>
+
+                <em class="orange"><i class="fas fa-feather-pointed"></i></em>DISCIPLESHIP: As an essential component of the ministry, we seek to disciple and mentor people to bring the good in them and where applicable connect people to other Men of God who can serve as mentors. Expose members to various opportunities and mentors that will bring out the confidence in them to pursue heights. <br><br>
+
+                <em class="orange"><i class="fas fa-feather-pointed"></i></em>EQUIPPING AND DEVELOPING THE GIFTINGS AND CALLINGS OF PEOPLE: Imbibe the virtue of developing the giftings in people and hard work that will bring unity and perfection to the body of Christ. <br><br>
+
+                <em class="orange"><i class="fas fa-feather-pointed"></i></em>EVANGELISM: Encourage evangelism and develop skills for evangelism in members and associates. <br><br>
+
+                <em class="orange"><i class="fas fa-feather-pointed"></i></em>FOSTERING CORDIAL RELATIONS AMONG MEMBERS. <br><br>
+
+                <em class="orange"><i class="fas fa-feather-pointed"></i></em>LEADERSHIP DEVELOPMENT. <br><br>
+
+            </p>
+        </div>
+        
+    </div>
+    <section id="team" class="team section-bg">
+        <div class="container">
+  
+            <div class="section-title">
+                <h2>Team</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+    
+            <div class="row">
+                {% for team in teams%}
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <div class="member-img">
+                        <img src={{team.imageURL}} class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                        </div>
+                        <div class="member-info">
+                        <h4>{{team.name}}</h4>
+                        <span>{{team.description}}</span>
+                        </div>
+                    </div>
                 </div>
-                
+                {% endfor %}
                 
             </div>
-            
-        </div>
-    </div>
+    </section>
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>

@@ -197,10 +197,13 @@ width: 65vw;
     padding: 60px 0;
     overflow: hidden;
   }
+  .container{
+    padding: 25px 0px 0px 0px;
+  }
   
   .section-bg {
-    /* background-color: #fafafa; */
-    background-color: red;
+    background-color: #fafafa;
+    /* background-color: red; */
   }
   
   .section-title {
@@ -228,6 +231,7 @@ width: 65vw;
   }
   
   .section-title p {
+    padding: 0px 20px;
     margin-bottom: 0;
     color: #919191;
     font-size: 14px;
@@ -438,7 +442,7 @@ button:hover{
     .hid{
         display:none;
     }
-    section div{
+    .section div{
         max-width: 40vw;
     }
 }
@@ -450,11 +454,11 @@ button:hover{
     .links{
         display:none;
     }
-    section{
+    .section{
         flex-direction: column;
 
     }
-    section div{
+    .section div{
         width: 100%;
 
     }

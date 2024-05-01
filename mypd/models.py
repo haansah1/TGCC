@@ -7,6 +7,13 @@ class ImageGroup(models.Model):
 
     def __str__(self):
         return self.name
+    
+class AudioGroup(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    
+
+    def __str__(self):
+        return self.name
 
 class Testimonials(models.Model):
     name = models.CharField(max_length=100, null=True)
@@ -31,6 +38,28 @@ class Teams(models.Model):
     def imageURL(self):
         try:
             url = self.image.url
+        except:
+            url = " " 
+        return url
+    
+class Audios(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    image = models.ImageField(null = True, blank = True);
+    description = models.CharField(max_length=100, null= True);
+    audio = models.FileField(null = True, blank = True, upload_to="./audio");
+    group = models.ForeignKey(AudioGroup, on_delete=models.SET_NULL, null=True, blank=True)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = " " 
+        return url
+    
+    def audioURL(self):
+        try:
+            url = self.audio.url
         except:
             url = " " 
         return url

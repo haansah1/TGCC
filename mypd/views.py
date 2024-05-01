@@ -19,7 +19,9 @@ def about(request):
     return render(request, "about.html", context)
     
 def sermons(request):
-    return render(request, "sermons.html")
+    audio = Audios.objects.all()
+    context = {"audios":audio,}
+    return render(request, "sermons.html", context)
 
 def testimonies(request):
     testimonies = Testimonials.objects.all()

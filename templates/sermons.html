@@ -17,6 +17,11 @@
   <!-- Google Fonts -->
   <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{% static 'sermons.css' %}" rel="stylesheet">
@@ -24,34 +29,11 @@
 </head>
 
 <body>
-    <div class="main-cont">
-        <div class="body">
-            <img class="body-im" src="{% static 'img/portfolio/im3_8Zyp3i2.JPG' %}" alt="">
-            <div class="header">
-                <div class="links">
-                    <a href="{% url 'index' %}">Home</a>
-                    <a href="{% url 'about' %}">About</a>
-                    <a href="{% url 'sermons' %}">Sermons</a>
-                    <a href="{% url 'testimonies' %}">Testimonies</a>
-                    <a href="{% url 'giving' %}">Giving</a>
-                    <a href="{% url 'gallery' %}">Gallery</a>
-                </div>
-                <input type="checkbox" id="input">
-                <label for="input">
-                    <div class="divbars">
-                        <i class="fas fa-bars bars"></i>
-                    </div>
-                </label>
-            </div>
-            <div class="cont1">
-                <p class="p1">Sermons</p>
-            </div>
-        </div>
-        <div class="hid">
-            <div class="close">
-                <i class="fas fa-close"></i>
-            </div>
-            <div class="links1">
+  <div class="main-cont">
+    <div class="body">
+        <img class="body-im" src="{% static 'img/portfolio/im3_8Zyp3i2_ekoDjv3.JPG' %}" alt="">
+        <div class="header">
+            <div class="links">
                 <a href="{% url 'index' %}">Home</a>
                 <a href="{% url 'about' %}">About</a>
                 <a href="{% url 'sermons' %}">Sermons</a>
@@ -59,17 +41,89 @@
                 <a href="{% url 'giving' %}">Giving</a>
                 <a href="{% url 'gallery' %}">Gallery</a>
             </div>
-            
+            <input type="checkbox" id="input">
+            <label for="input">
+                <div class="divbars">
+                    <i class="fas fa-bars bars"></i>
+                </div>
+            </label>
+        </div>
+        <div class="cont1">
+            <p class="p1">Sermons</p>
         </div>
     </div>
+    <div class="hid">
+        <div class="close">
+            <i class="fas fa-close"></i>
+        </div>
+        <div class="links1">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'sermons' %}">Sermons</a>
+            <a href="{% url 'testimonies' %}">Testimonies</a>
+            <a href="{% url 'giving' %}">Giving</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+        </div>
+        
+    </div>
+  </div>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
+  <main id="main">
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
 
+        <div class="section-title">
 
-    <!-- Template Main JS File -->
-    <script src="{% static 'main.js' %}"></script>
-    <script src="{% static 'main1.js' %}"></script>
+        <ul id="portfolio-flters" class="d-flex justify-content-center">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">Shiloh</li>
+          <li data-filter=".filter-card">Sundays</li>
+          <li data-filter=".filter-web">Special service</li>
+        </ul>
+
+        <div class="row portfolio-container">
+          {% for audio in audios %}
+          
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{audio.group}}">
+              <p class="title">{{audio.name}}</p>
+              <div class="portfolio-img"><img src={{audio.imageURL}} id="image" class="img-fluid" alt="">
+                
+              <p>
+                <a href={{audio.imageURL}}  data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title={{audio.audioURL}}>
+                  <i class="fas fa-play"></i>
+                </a>
+                
+              </p></div>
+              <div class="portfolio-info">
+                <p class="title">{{audio.description}}</p>
+                <a href={{audio.imageURL}} data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{% static 'audio/au1.mp3' %}"><i class="fas fa-play"></i></a>
+                <a href={{audio.audioURL}} download={{audio.imageURL}} class="details-link" title="More Details"><i class="fas fa-download"></i></a>
+              </div>
+            </div>
+            
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+  </main><!-- End #main -->
+
+  {% comment %} <div id="preloader"></div>
+  <a href="{#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>  {% endcomment %}
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'main.js' %}"></script>
+  <script src="{% static 'main1.js' %}"></script>
 
 </body>
 
